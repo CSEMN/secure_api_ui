@@ -1,0 +1,60 @@
+.btn-primary {
+  background-color: #ef5684;
+  border-color: #ef5684;
+  transition-duration: 0.4s;
+}
+
+.btn-primary:hover {
+  background-color: #8c1235;
+  border-color: #8c1235;
+}
+
+.btn-primary:focus {
+  background-color: #8c334e;
+  border-color: #8c334e;
+  box-shadow: 0 0 0 0.25rem rgba(215, 51, 97, 0.1);
+
+}
+
+.btn-primary:active {
+  background-color: #d0184f;
+  border-color: #d0184f;
+}
+
+.btn-primary:active:focus {
+  box-shadow: 0 0 0 0.25rem rgba(215, 51, 97, 0.1);
+}
+
+.form-control:focus {
+  color: #212529;
+  background-color: #f8fafc;
+  border-color: #ef5684;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(239, 86, 132, 0.25);
+}
+
+.form-check-input:checked {
+  background-color: #ef5684;
+  border-color: #ef5684;
+}
+
+.form-check-input:focus {
+  border-color: #ef5684;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(239, 86, 132, 0.25);
+}
+
+.btn-link {
+  color: #ef5684;
+  transition-duration: 0.4s;
+}
+
+.btn-link:hover {
+  color: #a93257;
+  transition-duration: 0.4s;
+}
+
+.btn-link:focus {
+  border-color: #a93257;
+  box-shadow: 0 0 0 0.25rem rgba(239, 86, 132, 0.25);
+}

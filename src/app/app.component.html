@@ -1,0 +1,91 @@
+<!doctype html>
+<html dir="{{getLang()=='ar'?'rtl':'ltr'}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSRF Token -->
+<!--  <meta name="csrf-token" content="{{ csrf_token() }}">-->
+
+  <title>Laravel</title>
+
+  <!-- Fonts -->
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <!--Jquery -->
+<!--  {{&#45;&#45;    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">&#45;&#45;}}-->
+<!--  {{&#45;&#45;    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">&#45;&#45;}}-->
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+<!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+
+
+</head>
+<body>
+<div id="app">
+  <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <div class="container " dir="ltr">
+      <a class="navbar-brand" routerLink="/">
+         <fa-icon [icon]="faCoffee"></fa-icon> {{'TITLE'|translate}}
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+        <!-- Left Side Of Navbar -->
+        <ul class="navbar-nav me-auto">
+
+        </ul>
+
+        <!-- Right Side Of Navbar -->
+        <ul class="navbar-nav ms-auto">
+
+          <ng-container *ngFor="let language of languageList">
+            <li class="nav-item">
+              <a class="nav-link" role="button" (click)="changeLang(language.code)">
+                {{language.label|translate}}
+              </a>
+            </li>
+          </ng-container>
+
+          <!-- Authentication Links -->
+          <li class="nav-item">
+            <a class="nav-link"  *ngIf="!isSignedIn"  routerLink="/login">{{'LOGIN'|translate}}</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link"  routerLink="/register" *ngIf="!isSignedIn" >{{'REGISTER'|translate}}</a>
+          </li>
+          <button class="btn btn-primary" (click)="signOut()" *ngIf="isSignedIn">{{'LOGOUT'|translate}}</button>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-4">
+    <router-outlet></router-outlet>
+  </main>
+</div>
+
+<script type="text/javascript">
+  function setCookieAr() {
+    document.cookie = "lang=ar;path=/";
+    location.reload();
+  }
+
+  function setCookieEn() {
+    document.cookie = "lang=en;path=/";
+    location.reload();
+  }
+
+  document.getElementById("ar_btn").addEventListener("click", setCookieAr);
+  document.getElementById("en_btn").addEventListener("click", setCookieEn);
+</script>
+</body>
+</html>
+
+
+
+

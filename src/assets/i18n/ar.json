@@ -1,0 +1,16 @@
+{
+  "TITLE": "Secure API JWT",
+  "EMAIL": "البريد الالكتروني",
+  "PASSWORD": "كلمة المرور",
+  "PASSWORD_CONFIRM": "تأكيد كلمة المرور",
+  "LOGIN": "تسجيل الدخول",
+  "REGISTER": "تسجيل جديد",
+  "REMEMBER": "تذكرني",
+  "OR": "او",
+  "NEED_ACC":"تحتاج حساب جديد ؟",
+  "LOGOUT":"خروج",
+  "NAME": "الاسم",
+  "PROFILE": "بيانات المستحدم",
+  "Arabic":"العربية",
+  "English":"الانجليزية"
+}

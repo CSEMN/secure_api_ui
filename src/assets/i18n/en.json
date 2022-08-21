@@ -1,0 +1,18 @@
+{
+  "TITLE": "Secure API JWT",
+  "EMAIL": "Email Address",
+  "PASSWORD": "Password",
+  "PASSWORD_CONFIRM": "Password Confirmation",
+  "LOGIN": "Login",
+  "REGISTER": "Register",
+  "REMEMBER": "Remember me",
+  "OR": "OR",
+  "NEED_ACC":"Need an account ?",
+  "LOGOUT":"Logout",
+  "NAME": "Name",
+  "PROFILE": "User Profile",
+  "Arabic":"Arabic",
+  "English":"English"
+
+
+}
