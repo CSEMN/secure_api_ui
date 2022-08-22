@@ -104,7 +104,7 @@ export class SigninComponent implements OnInit,AfterViewInit {
     (<any>window)['googleSDKLoaded'] = () => {
       (<any>window)['gapi'].load('auth2', () => {
         this.auth2 = (<any>window)['gapi'].auth2.init({
-          client_id: '23453012486-7gjvl82hp6qbho6jl03469fgnfiipov1.apps.googleusercontent.com',
+          client_id: '54685744201-la4i9skduf880ogup6q47bd0v81msuak.apps.googleusercontent.com',
           plugin_name:'login',
           cookiepolicy: 'single_host_origin',
           scope: 'profile email'
