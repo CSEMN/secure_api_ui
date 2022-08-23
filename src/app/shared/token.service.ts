@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
 })
 export class TokenService {
   private issuer = {
-    login: 'http://127.0.0.1:8000/api/login',
-    register: 'http://127.0.0.1:8000/api/register',
+    login: 'https://secure-api-jwt.herokuapp.com/api/login',
+    register: 'https://secure-api-jwt.herokuapp.com/api/register',
   };
   constructor() {}
   handleData(token: any) {
