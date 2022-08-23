@@ -1,60 +1,60 @@
 .btn-primary {
-  background-color: #ef5684;
-  border-color: #ef5684;
+  background-color: #1C3879;
+  border-color: #1C3879;
   transition-duration: 0.4s;
 }
 
 .btn-primary:hover {
-  background-color: #8c1235;
-  border-color: #8c1235;
+  background-color: #0a1c49;
+  border-color: #0a1c49;
 }
 
 .btn-primary:focus {
-  background-color: #8c334e;
-  border-color: #8c334e;
+  background-color: #607EAA;
+  border-color: #607EAA;
   box-shadow: 0 0 0 0.25rem rgba(215, 51, 97, 0.1);
 
 }
 
 .btn-primary:active {
-  background-color: #d0184f;
-  border-color: #d0184f;
+  background-color: #023196;
+  border-color: #023196;
 }
 
 .btn-primary:active:focus {
-  box-shadow: 0 0 0 0.25rem rgba(215, 51, 97, 0.1);
+  box-shadow: rgba(19, 47, 105, 0.25);
 }
 
 .form-control:focus {
   color: #212529;
   background-color: #f8fafc;
-  border-color: #ef5684;
+  border-color: #1C3879;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(239, 86, 132, 0.25);
+  box-shadow: rgba(28, 56, 121, 0.25);
 }
 
 .form-check-input:checked {
-  background-color: #ef5684;
-  border-color: #ef5684;
+  background-color: #1C3879;
+  border-color: #1C3879;
 }
 
 .form-check-input:focus {
-  border-color: #ef5684;
+  border-color: #1C3879;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(239, 86, 132, 0.25);
+  box-shadow: rgba(28, 56, 121, 0.25);
 }
 
 .btn-link {
-  color: #ef5684;
+  color: #1C3879;
   transition-duration: 0.4s;
 }
 
 .btn-link:hover {
-  color: #a93257;
+  color: #1C3879;
   transition-duration: 0.4s;
 }
 
 .btn-link:focus {
-  border-color: #a93257;
-  box-shadow: 0 0 0 0.25rem rgba(239, 86, 132, 0.25);
+  border-color: #1C3879;
+  box-shadow: rgba(28, 56, 121, 0.25);
 }

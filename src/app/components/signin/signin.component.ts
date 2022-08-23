@@ -28,6 +28,11 @@ export class SigninComponent implements OnInit,AfterViewInit {
     private titleService:Title,
     private zone: NgZone
   ) {
+
+    if (token.isLoggedIn()) {
+      router.navigate(['profile']);
+    }
+
     this.titleService.setTitle("API JWT | Login");
     this.loginForm = this.fb.group({
       email: [],

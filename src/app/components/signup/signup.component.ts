@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../shared/auth.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {Title} from "@angular/platform-browser";
+import {TokenService} from "../../shared/token.service";
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -15,8 +16,14 @@ export class SignupComponent implements OnInit {
     public router: Router,
     public fb: FormBuilder,
     public authService: AuthService,
+    private token: TokenService,
     private titleService:Title
   ) {
+
+    if (token.isLoggedIn()) {
+      router.navigate(['profile']);
+    }
+
     this.titleService.setTitle("API JWT | Register");
     this.registerForm = this.fb.group({
       name: [''],
