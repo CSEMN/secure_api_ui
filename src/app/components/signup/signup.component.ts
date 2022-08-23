@@ -4,6 +4,7 @@ import { AuthService } from '../../shared/auth.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {Title} from "@angular/platform-browser";
 import {TokenService} from "../../shared/token.service";
+import {AuthStateService} from "../../shared/auth-state.service";
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -17,10 +18,11 @@ export class SignupComponent implements OnInit {
     public fb: FormBuilder,
     public authService: AuthService,
     private token: TokenService,
-    private titleService:Title
+    private titleService:Title,
+    private authState: AuthStateService,
   ) {
 
-    if (token.isLoggedIn()) {
+    if (authState.isAuthorized()) {
       router.navigate(['profile']);
     }
 

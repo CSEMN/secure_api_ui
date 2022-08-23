@@ -3,6 +3,7 @@ import {AuthService} from '../../shared/auth.service';
 import {Title} from "@angular/platform-browser";
 import {TokenService} from "../../shared/token.service";
 import {Router} from "@angular/router";
+import {AuthStateService} from "../../shared/auth-state.service";
 
 // User interface
 export class User {
@@ -22,8 +23,9 @@ export class UserProfileComponent implements OnInit {
               private titleService: Title,
               private token: TokenService,
               public router: Router,
-              ) {
-    if (!token.isLoggedIn()) {
+              private authState: AuthStateService,
+  ) {
+    if (!authState.isAuthorized()) {
       router.navigate(['login']);
     }
 

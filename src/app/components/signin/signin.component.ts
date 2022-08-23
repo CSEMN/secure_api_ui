@@ -29,7 +29,7 @@ export class SigninComponent implements OnInit,AfterViewInit {
     private zone: NgZone
   ) {
 
-    if (token.isLoggedIn()) {
+    if (authState.isAuthorized()) {
       router.navigate(['profile']);
     }
 
