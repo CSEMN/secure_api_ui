@@ -28,11 +28,6 @@ export class SigninComponent implements OnInit,AfterViewInit {
     private titleService:Title,
     private zone: NgZone
   ) {
-
-    if (authState.isAuthorized()) {
-      router.navigate(['profile']);
-    }
-
     this.titleService.setTitle("API JWT | Login");
     this.loginForm = this.fb.group({
       email: [],
@@ -40,7 +35,11 @@ export class SigninComponent implements OnInit,AfterViewInit {
     });
   }
   ngOnInit() {
-
+    this.authState.userAuthState.subscribe((loggedIn) => {
+      if (loggedIn) {
+        this.router.navigate(['profile']);
+      }
+    });
   }
   onSubmit() {
     this.authService.signin(this.loginForm.value).subscribe(

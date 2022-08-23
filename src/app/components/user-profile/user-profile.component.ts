@@ -25,10 +25,6 @@ export class UserProfileComponent implements OnInit {
               public router: Router,
               private authState: AuthStateService,
   ) {
-    if (!authState.isAuthorized()) {
-      router.navigate(['login']);
-    }
-
     this.titleService.setTitle("API JWT | Profile");
 
     this.authService.profileUser().subscribe((data: any) => {
@@ -37,5 +33,10 @@ export class UserProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.authState.userAuthState.subscribe((loggedIn) => {
+      if (!loggedIn) {
+        this.router.navigate(['login']);
+      }
+    });
   }
 }

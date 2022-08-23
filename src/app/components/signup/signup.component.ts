@@ -21,11 +21,6 @@ export class SignupComponent implements OnInit {
     private titleService:Title,
     private authState: AuthStateService,
   ) {
-
-    if (authState.isAuthorized()) {
-      router.navigate(['profile']);
-    }
-
     this.titleService.setTitle("API JWT | Register");
     this.registerForm = this.fb.group({
       name: [''],
@@ -34,7 +29,13 @@ export class SignupComponent implements OnInit {
       password_confirmation: [''],
     });
   }
-  ngOnInit() {}
+  ngOnInit() {
+    this.authState.userAuthState.subscribe((loggedIn) => {
+      if (loggedIn) {
+        this.router.navigate(['profile']);
+      }
+    });
+  }
   onSubmit() {
     this.authService.register(this.registerForm.value).subscribe(
       (result) => {
