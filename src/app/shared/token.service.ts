@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
 })
 export class TokenService {
   private issuer = {
-    login: 'https://secure-api-jwt.herokuapp.com/api/login',
-    register: 'https://secure-api-jwt.herokuapp.com/api/register',
+    login: 'http://secure-api-jwt.herokuapp.com/api/login',
+    register: 'http://secure-api-jwt.herokuapp.com/api/register',
   };
   constructor() {}
   handleData(token: any) {
@@ -20,7 +20,6 @@ export class TokenService {
     if (token) {
       const payload = this.payload(token);
       if (payload) {
-        console.log("issuer: ",payload.iss);
         return Object.values(this.issuer).indexOf(payload.iss) > -1;
       }
     } else {
