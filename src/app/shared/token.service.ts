@@ -6,6 +6,7 @@ export class TokenService {
   private issuer = {
     login: 'http://secure-api-jwt.herokuapp.com/api/login',
     register: 'http://secure-api-jwt.herokuapp.com/api/register',
+    google:'http://secure-api-jwt.herokuapp.com/api/google/auth'
   };
   constructor() {}
   handleData(token: any) {
@@ -20,7 +21,6 @@ export class TokenService {
     if (token) {
       const payload = this.payload(token);
       if (payload) {
-        console.log("issuer: ",payload.iss);
         return Object.values(this.issuer).indexOf(payload.iss) > -1;
       }
     } else {
