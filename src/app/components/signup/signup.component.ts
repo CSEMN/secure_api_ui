@@ -51,4 +51,13 @@ export class SignupComponent implements OnInit {
       }
     );
   }
+
+  fileChange(event:any) {
+    let fileList: FileList = event.target.files;
+    if(fileList.length > 0) {
+      let file: File = fileList[0];
+      this.registerForm.controls['avatar'].setValue(file);
+    }
+  }
+
 }
