@@ -9,6 +9,7 @@ import {AuthStateService} from "../../shared/auth-state.service";
 export class User {
   name: any;
   email: any;
+  avatar:any;
 }
 
 @Component({
