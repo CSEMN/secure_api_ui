@@ -21,16 +21,16 @@ export class AuthService {
   // User registration
   register(user: User): Observable<any> {
 
-    let formData= new FormData();
+    const formData= new FormData();
     formData.append('name',user.name.toString());
     formData.append('email',user.email.toString());
     formData.append('password',user.password.toString());
     formData.append('password_confirmation',user.password_confirmation.toString());
 
-    formData.append('avatar',user.avatar);
+    formData.append('avatar',user.avatar,user.avatar.name);
     console.log('On Register: ',user);
     // return this.http.post('http://localhost:8000/api/register', user);
-    return this.http.post('https://secure-api-jwt.herokuapp.com/api/register', user,);
+    return this.http.post('https://secure-api-jwt.herokuapp.com/api/register', formData);
   }
 
   // Login
