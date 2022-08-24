@@ -20,12 +20,17 @@ export class AuthService {
 
   // User registration
   register(user: User): Observable<any> {
-    let headers = new HttpHeaders({
-      'Content-Type': 'multipart/form-data',
-      'Accept': 'application/json'
-    });
+
+    let formData= new FormData();
+    formData.append('name',user.name.toString());
+    formData.append('email',user.email.toString());
+    formData.append('password',user.password.toString());
+    formData.append('password_confirmation',user.password_confirmation.toString());
+
+    formData.append('avatar',user.avatar);
+    console.log('On Register: ',user);
     // return this.http.post('http://localhost:8000/api/register', user);
-    return this.http.post('https://secure-api-jwt.herokuapp.com/api/register', user, {headers: headers});
+    return this.http.post('https://secure-api-jwt.herokuapp.com/api/register', user,);
   }
 
   // Login
